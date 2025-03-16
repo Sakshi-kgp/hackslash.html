@@ -1,0 +1,213 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simon Game</title>
+  <style>
+    body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
+.outerbox{
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  padding: 60px;
+  text-align: center;
+  margin: 20px;
+  background-color: rgb(206,206,206);
+  border-radius:20px ;
+  box-shadow: 0px 0px 15px 10px rgb(146,146,146);
+}
+.playground{
+  padding: 10px;
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: auto auto;
+  align-items: center;
+justify-content: center;
+}
+.box{
+  border: 4px solid rgb(0,0,0);
+  border-radius: 20px;
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+}
+.help{
+  border: none;
+  border-radius: 10px;
+  transition: 100ms;
+}
+.help:hover{
+background-color: black;
+color: white;
+}
+.memFlash{
+  background-color: white;
+  box-shadow: 0px 0px 10px 10px rgb(255,230,0);
+}
+.userFlash{
+  background-color: black;
+  box-shadow: 0px 0px 10px 10px black;
+  height: 95px;
+  width: 95px;
+}
+.gameOver{
+  background-color: red;
+}
+  </style>
+</head>
+<body>
+  <div class="outerbox">
+    <h2>Simon Says Game</h2>
+    <h3>(press any key to Start)</h3>
+    <div class="playground">
+      <div class="box" id="box1" style="background-color:red;"></div>
+      <div class="box" id="box2" style="background-color:green;"></div>
+      <div class="box" id="box3" style="background-color:blue;"></div>
+      <div class="box" id="box4" style="background-color:yellow;"></div>
+      <button class="help">Help</button>
+    </div>
+  </div>
+  <script>
+    let body=document.querySelector("body");
+    let level=document.querySelector("h3");
+    let playground=document.querySelector(".playground");
+    let boxes=document.querySelectorAll(".box");
+    let helpBtn=document.querySelector(".help ");    
+    let started=false;
+    let memArr=[];
+//memArr-['box1','box2','box3,....]
+    let userArr=[];
+    let levelNum=0;
+    let clicks=0;//this will count the user click.
+    let num=0;
+    let score=0;
+
+
+
+
+
+
+
+
+//execution code.
+playground.addEventListener('click',()=>{
+if(started){
+    if(event.target.className=='box'){
+    userFlash(event.target.id)
+    console.log(event.target.id);
+    clicks++;
+    userArr.push(event.target.id);
+    // console.log(userArr);
+  
+checker();
+  }}
+})
+
+
+function userFlash(box){
+            const button = document.getElementById(`${box}`);
+            button.classList.add("userFlash");
+            setTimeout(() => button.classList.remove("userFlash"), 200);
+// //   box.classList.add('userFlash');
+//   setTimeout(() => {
+//     box.classList.remove('userFlash')
+//   }, 200);
+}
+
+body.addEventListener('keydown',()=> {
+if(started==false){
+  started=true;
+  selectBox();
+}
+})
+
+function selectBox(){
+  level.innerText= `Level ${levelNum}`;//initially=0
+  levelNum++;//0->>1
+ 
+  let randomVal=Math.floor(Math.random()*4)//value between 0 to 4{4 not included}
+    // flashRand(randomVal);
+    memArr.push(boxes[randomVal].id);
+    playSequence();
+    console.log(memArr);
+}
+
+
+function playSequence() {
+            let i = 0;
+            const interval = setInterval(() => {
+                flashRand(memArr[i]);
+                i++;
+                if (i >= memArr.length) clearInterval(interval);
+            }, 1000);
+    }
+function flashRand(randomVal) {
+            const button = document.getElementById(`${randomVal}`);
+            button.classList.add("memFlash");
+            setTimeout(() => button.classList.remove("memFlash"), 200);
+
+
+//   boxes[randomVal].classList.add('memFlash');
+//   setTimeout(
+//     ()=>{
+//       boxes[randomVal].classList.remove('memFlash')
+//     },[250]//timeout runs after 250ms
+//   )
+}
+
+
+
+//to check memory array is same as user array or not.
+function checker(){
+  //memArr=[1,2,3,4](let)
+  //userArr=[1](let)
+  //clicks=0;
+  //num=0;
+  if(userArr[clicks-1]!=memArr[clicks-1]){
+    level.innerText= `You have lost the game,Your score is ${score}`;
+    started=false;
+    userArr=[];
+    memArr=[];
+    clicks=0;
+    num=0;
+    body.classList.add('gameOver')
+    setTimeout(
+  ()=>{
+    body.classList.remove('gameOver')
+  },500
+)
+
+
+    levelNum=1;
+  }
+  else{
+    num++;
+    //num==1
+  }if(num==memArr.length&& num!=0){
+    //user clicked all the boxes in correct manner.
+    score+=10;
+    userArr=[];
+    clicks=0;
+    num=0;
+    setTimeout(selectBox,500)
+  }
+}
+helpBtn.addEventListener('click',() =>{
+  let initText=level.innerText;
+  level.innerText= `Memory Array is:${memArr}`;
+  setTimeout(() =>{
+    level.innerText=initText
+  },200)
+})
+  </script>
+</body>
+</html>

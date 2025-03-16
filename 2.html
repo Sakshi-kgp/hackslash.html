@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <style>
+    
+
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    .container{
+      display: flex;
+flex-direction: row;
+
+justify-content:space-between ;
+margin-top: 5px;
+
+    }
+    .container nav{
+      display: flex;
+      flex-direction: row;
+      margin-left: 30px;
+      padding: 10px;
+      
+    }
+    
+    nav a{
+      text-decoration: none;
+      color: black;
+      padding: 5px;
+    }
+    #btn{
+      
+      border: 2px solid white;
+      
+      color:white;
+      height: 44px;
+      width: 168px;
+      margin-top: 5px;
+      z-index: 2;
+      position: absolute;
+      top: 90px;
+      right: 15px;
+    }
+    .box{
+      padding: 50px;
+
+    }
+    button{
+      background-color: blue;
+      color: white;
+    }
+     button span{
+      padding: 5px;
+      margin: 5px;
+      padding-bottom: 10px;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    #nav{
+      padding: 5px;
+      margin-top: 70px;
+    }
+    main{
+    padding: 50px;
+    margin-left: 50px;
+    }
+    #profile{
+      padding: 50px;
+      height: 150px;
+      width: 150px;
+    }
+    .box1{
+display: flex;
+flex-direction: row;
+padding: 50px;
+    }
+    .aboutme{
+      margin-top:50px;
+    }
+    h3{
+      color: blue;
+      font-weight: 300;
+    }
+    
+    .layout{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    #html{
+      height: 130px;
+      width: 300px;
+      transform: rotate(30deg);
+padding-left: 100px;
+    }
+    .img2{
+      height: 50px;
+      width: 50px;
+    }
+    #react{
+     margin: auto; 
+    
+    }
+    
+   
+    
+    .room1{
+      
+      background-color: rgb(66, 66, 243);
+color: white;
+text-decoration: none;
+    }
+    .room2{
+   
+      text-decoration: none;
+    } 
+    .room4{
+     
+      background-color: black;
+color: white;
+
+text-decoration: none;
+    }
+    .article{
+      
+      display: inline-block;
+    }
+    .heading{
+      color: white;
+    }
+    .heading1{
+      color: black;
+    }
+    .heading3{
+      color: white;
+    }
+    .contain{
+      display: flex;
+      flex-direction: row;
+      
+    }
+    .contain1{
+      padding: 5px;
+      margin: 15px;
+      background-color: rgba(176, 186, 194, 0.242);
+      height: 150px;
+    }
+    
+    .last{
+      display: flex;
+      flex-direction: row;
+      margin-left: 150px;
+    }
+    .dibba{
+      display: flex;
+      flex-direction: row;
+    }
+    button:hover{
+      cursor: pointer;
+      background-color: green;
+      border-radius: 15px;
+    }
+    #btn:hover{
+cursor: pointer;
+background-color: green;
+    }
+    .article{
+      display: flex;
+      flex-direction: row;
+    }
+    #card{
+      z-index: 2;
+      position: absolute;
+      height: 150px;
+      top: 200px;
+      right: 260px;
+      width: 240px;
+    }
+    #diamond{
+     position: absolute; 
+     top: 1056px;
+     right: 214px;
+     
+    }
+    #pc{
+      position: absolute; 
+     top: 1018px;
+     right: 26px;
+     
+    }
+    #angular{
+      position: absolute; 
+     top: 865px;
+     right: 78px;
+     
+    }
+   #react{
+      position: absolute;
+      top:874px;
+      right: 298px;
+    }
+    .box4{
+      display: grid;
+      grid-template-rows: auto auto;
+      grid-template-columns: auto auto;
+      margin-top: 100px;
+    }
+    .imagemod{
+      filter: invert(100%) grayscale(100%);
+    }
+   
+  </style>
+</head>
+<body>
+ <header>
+
+
+
+
+
+
+
+  <div class="container">
+    
+
+    <nav id="nav">
+      <img src="circle.jpg" alt="" height="50">
+      <a href="#">START</a>
+      <a href="#about">ABOUT</a>
+      <a href="#servi">SERVICES</a>
+      <a href="#">BLOG</a>
+     <a href="#open">OPENSOURCE</a>
+    </nav>
+   
+    <button id="btn">
+      <div class="dibba"><div><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAP9JREFUWEftlkEKwjAQRV8vILgTTyeCigvBrbjxBm7EjbrxosqAhSxsk0x+oYV0O23m9f/8SRpG9jQj46ECxRypClWFYgrE6so9dAKWwCHWtK+uAroCx1+jB7D1QqmA7sA+gHBDqYCMRQKlBJJAqYEM6gWsvfYNAWRrPr1QQwCZOF1QO+CjiP3FEWODslEwC7415WwkdEKlKtT7V5mwb2DVBTVZIK9ldozMAwUtgRuFZZmu/N3UvVa1DVItywFyJ6yNZ06z2LtFM2gIoKIprQYa1eEqgVEqFF7QbiW3RmXKzsCiBEapUCx9yXWlQslNFae9pFnKIlWhmEpVockp9AXY9C0lASga0QAAAABJRU5ErkJggg=="/></div>
+     <div> <span><br>WORK WITH ME</span></div>
+      </div>
+    </button>
+    <img src="card.jpg" id="card">
+    <canvas id="canva" height="600" width="500"  style=" position: absolute; top: 0;right: 0;">  </canvas>
+  </div>
+ </header> 
+ <main>
+  <div class="box">
+    <div class="text">
+      <h1>Hey,</h1>I'm Sakshi  </div>
+        <pre>I am a frontend Developer.
+I'm passionate about creating user-friendly and visually appealing interfaces.
+        </pre>
+    <button>
+  <div class="dibba">
+    <div><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAP9JREFUWEftlkEKwjAQRV8vILgTTyeCigvBrbjxBm7EjbrxosqAhSxsk0x+oYV0O23m9f/8SRpG9jQj46ECxRypClWFYgrE6so9dAKWwCHWtK+uAroCx1+jB7D1QqmA7sA+gHBDqYCMRQKlBJJAqYEM6gWsvfYNAWRrPr1QQwCZOF1QO+CjiP3FEWODslEwC7415WwkdEKlKtT7V5mwb2DVBTVZIK9ldozMAwUtgRuFZZmu/N3UvVa1DVItywFyJ6yNZ06z2LtFM2gIoKIprQYa1eEqgVEqFF7QbiW3RmXKzsCiBEapUCx9yXWlQslNFae9pFnKIlWhmEpVockp9AXY9C0lASga0QAAAABJRU5ErkJggg=="/>
+    </div>
+    <div> <span><br>WORK WITH ME</span>
+    </div></button>
+
+  </div>   
+  
+<nav id="nav">
+  
+  <a href="#">GITHUB</a>
+  <a href="#">LINKEDIN</a>
+  <a href="#">TWITTER</a>
+</nav>
+
+<div class="box1">
+  <div class="img">
+    <img src="pic.jpg" alt="My Profile" id="profile">
+  </div>
+  <div class="aboutme"> <div><h3 id="about">ABOUT ME</h3></div>
+    My name is Sakshi, and I'm a first-year btech student and a frontend developer.
+I'm super excited to be the part of Hackslash Developer's Club, and I'm looking forward to learning from all of you, as well as sharing my own skills and experiences.
+
+As a frontend developer, I'm passionate about creating user-friendly and visually appealing interfaces. I've been learning and growing in this field , and I'm eager to apply my skills to real-world problems.
+
+In this Club, I'm hoping to collaborate with other talented developers and designers to create innovative solutions that make a positive impact.
+ </div>
+</div>
+
+<div class="box2">
+  <div class="layout">
+  <div class="services"> <h3 id=servi >SERVICE</h3>
+    <h2>frontend Development</h2>
+    Frontend development means to design the face of a website or application. It involves working on the appearance of the website. Building interactive buttons, using images and animations, or any other aspect that involves enhancing the appearance of the webpage.
+  </div>
+<img src="html.jpg" alt="layout" id="html">
+  </div>
+  <img src="https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-128.png" alt="" class="img2" id="react">
+  <img src="https://cdn3.iconfinder.com/data/icons/logos-3/250/angular-128.png" alt="" class="img2" id="angular">
+  <img src="diamond.jpg" alt="" id="diamond" class="img2">
+  <img src="ps.jpg" alt="" id="pc" class="img2">
+
+
+  
+    <button>
+      <div class="dibba">
+        <div><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAP9JREFUWEftlkEKwjAQRV8vILgTTyeCigvBrbjxBm7EjbrxosqAhSxsk0x+oYV0O23m9f/8SRpG9jQj46ECxRypClWFYgrE6so9dAKWwCHWtK+uAroCx1+jB7D1QqmA7sA+gHBDqYCMRQKlBJJAqYEM6gWsvfYNAWRrPr1QQwCZOF1QO+CjiP3FEWODslEwC7415WwkdEKlKtT7V5mwb2DVBTVZIK9ldozMAwUtgRuFZZmu/N3UvVa1DVItywFyJ6yNZ06z2LtFM2gIoKIprQYa1eEqgVEqFF7QbiW3RmXKzsCiBEapUCx9yXWlQslNFae9pFnKIlWhmEpVockp9AXY9C0lASga0QAAAABJRU5ErkJggg=="/>
+        </div>
+        <div><span><br>WORK WITH ME</span>
+        </div>
+      </div></button>
+</div>
+
+</div>
+<div class="box4">
+  
+  <div class="room1">
+    <br>
+    <br>
+    <h3 class="heading">Building a blog with Jekyll, Docker ad GitLab</h3><br>
+    <h6>Feb 27,2025-2 minute read</h6><br>
+    Developing a Jekyll blog with Docker deployed to Gitlab pages.
+<br><br><br>
+    <div class="article">
+        
+      <div class="article2"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAP9JREFUWEftlkEKwjAQRV8vILgTTyeCigvBrbjxBm7EjbrxosqAhSxsk0x+oYV0O23m9f/8SRpG9jQj46ECxRypClWFYgrE6so9dAKWwCHWtK+uAroCx1+jB7D1QqmA7sA+gHBDqYCMRQKlBJJAqYEM6gWsvfYNAWRrPr1QQwCZOF1QO+CjiP3FEWODslEwC7415WwkdEKlKtT7V5mwb2DVBTVZIK9ldozMAwUtgRuFZZmu/N3UvVa1DVItywFyJ6yNZ06z2LtFM2gIoKIprQYa1eEqgVEqFF7QbiW3RmXKzsCiBEapUCx9yXWlQslNFae9pFnKIlWhmEpVockp9AXY9C0lASga0QAAAABJRU5ErkJggg=="/></img></div>
+     <div class="article1"><a href="article.html" style="text-decoration: none;"><br>READ ARTICLE</a></div>
+  </div><br>
+  </div>
+  <div class="room2"><br><br>
+    <h3 class="heading1">Business-A PHP Library for business date calculations</h3><br>
+    <h6>Feb 27,2025-2 minute read</h6>
+    Discovering Business,a PHP library to ease dealing with business date calculations.
+    <br><br>
+    <div class="article">
+        
+      <div class="article2"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAP9JREFUWEftlkEKwjAQRV8vILgTTyeCigvBrbjxBm7EjbrxosqAhSxsk0x+oYV0O23m9f/8SRpG9jQj46ECxRypClWFYgrE6so9dAKWwCHWtK+uAroCx1+jB7D1QqmA7sA+gHBDqYCMRQKlBJJAqYEM6gWsvfYNAWRrPr1QQwCZOF1QO+CjiP3FEWODslEwC7415WwkdEKlKtT7V5mwb2DVBTVZIK9ldozMAwUtgRuFZZmu/N3UvVa1DVItywFyJ6yNZ06z2LtFM2gIoKIprQYa1eEqgVEqFF7QbiW3RmXKzsCiBEapUCx9yXWlQslNFae9pFnKIlWhmEpVockp9AXY9C0lASga0QAAAABJRU5ErkJggg=="/></img></div>
+     <div class="article1"><a href="article.html" style="text-decoration: none;"><br>READ ARTICLE</a></div>
+  </div>
+</div>
+
+
+  <div class="room"><br><br>
+    <h3>Data tables with Symfony,Hateoas and AngularJS</h3><br>
+    <h6>Feb 27,2025-2 minute read</h6>
+    Building a simple Angular table consuming a Hateoas REST API <div class="br"></div>
+    <div class="article">
+    <div class="article2"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAP9JREFUWEftlkEKwjAQRV8vILgTTyeCigvBrbjxBm7EjbrxosqAhSxsk0x+oYV0O23m9f/8SRpG9jQj46ECxRypClWFYgrE6so9dAKWwCHWtK+uAroCx1+jB7D1QqmA7sA+gHBDqYCMRQKlBJJAqYEM6gWsvfYNAWRrPr1QQwCZOF1QO+CjiP3FEWODslEwC7415WwkdEKlKtT7V5mwb2DVBTVZIK9ldozMAwUtgRuFZZmu/N3UvVa1DVItywFyJ6yNZ06z2LtFM2gIoKIprQYa1eEqgVEqFF7QbiW3RmXKzsCiBEapUCx9yXWlQslNFae9pFnKIlWhmEpVockp9AXY9C0lASga0QAAAABJRU5ErkJggg=="/></img></div>
+ <div class="article1"><a href="article.html" style="text-decoration: none;"><br>READ ARTICLE</a></div>
+</div>
+  </div>
+
+  <div class="room4"><br><br>
+    <h3 class="heading3">Swap -A PHP exchange rates library.</h4><br>
+    <h6>Feb 27,2025-2 minutes read</h6><br>
+    <section class="text">
+      Discovering Business,a PHP library to ease dealing with business date calculation.<br>
+      <div class="article">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAP9JREFUWEftlkEKwjAQRV8vILgTTyeCigvBrbjxBm7EjbrxosqAhSxsk0x+oYV0O23m9f/8SRpG9jQj46ECxRypClWFYgrE6so9dAKWwCHWtK+uAroCx1+jB7D1QqmA7sA+gHBDqYCMRQKlBJJAqYEM6gWsvfYNAWRrPr1QQwCZOF1QO+CjiP3FEWODslEwC7415WwkdEKlKtT7V5mwb2DVBTVZIK9ldozMAwUtgRuFZZmu/N3UvVa1DVItywFyJ6yNZ06z2LtFM2gIoKIprQYa1eEqgVEqFF7QbiW3RmXKzsCiBEapUCx9yXWlQslNFae9pFnKIlWhmEpVockp9AXY9C0lASga0QAAAABJRU5ErkJggg=="/></img>
+        <div class="article2" id="imagemod">
+        
+        </div>
+      </div>
+ <div class="article1"><a href="article.html" style="text-decoration: none; color: white;"><br>READ ARTICLE</a></div><br>
+</div>
+    </section>
+
+</div>
+<br><br><br><br>
+<h3 style="text-align: center;" id="open">OPEN SOURCE</h3><br><br>
+<div class="contain"><br><br><br>
+  
+  <div class="contain1">
+<h4>Swap</h4><br>
+Currency exchange rates library for php.
+
+  </div>
+  <div class="contain1" style="background-color: black; color:white;">
+<h4>Swap</h4><br>
+Currency exchange rates library for php.
+  </div>
+  <div class="contain1">
+<h4>Swap</h4><br>
+Currency exchange rates library for php.
+
+  </div>
+</div>
+<h3 style="color: blue; margin-top: 50px;">Need help developing yor application?</h3><br>
+Let's get in touch!
+ </main>
+ <footer >
+  <div class="last">
+  <div> <img src="circle.jpg" alt="" height="50px"><br><br><br><br> </div> 
+ <div> <h5>Charles Von der Hejden</h5>
+  2018-All rights reserved</div>
+</div>
+ </footer>
+ <script>
+  const canvas=document.getElementById("canva");
+  const ctx=canvas.getContext("2d");
+  ctx.beginPath();
+  ctx.moveTo(500,0);
+  ctx.lineTo(0,200);
+  ctx.lineTo(0,350);
+  ctx.lineTo(500,600);
+  ctx.fillStyle="blue";
+  ctx.fill()
+ ctx.stroke();
+  
+  
+  ctx.beginPath();
+  ctx.moveTo(500,255);
+  ctx.lineTo(265,300);
+  ctx.lineTo(500,355);
+  ctx.fillStyle='white';
+  ctx.fill();
+  ctx.stroke();
+
+</script>
+</body>
+</html>
